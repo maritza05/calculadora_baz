@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import unittest
-from calculadora import Calculadora
+from calculadora import Calculadora, ErrorAlDividirEntreZero
 
 
 class TestCalculadora(unittest.TestCase):
@@ -31,3 +31,16 @@ class TestCalculadora(unittest.TestCase):
         resultado = calcu.restar(5, 5)
 
         self.assertEqual(resultado, 0)
+
+
+    def test_dividir_5_y_5_regresa_1(self):
+        calcu = Calculadora()
+        resultado = calcu.dividir(5, 5)
+
+        self.assertEqual(resultado, 1)
+
+    def test_dividir_10_y_0_regresa_mensaje_error(self):
+        calcu = Calculadora()
+
+        with self.assertRaises(ErrorAlDividirEntreZero):
+            resultado = calcu.dividir(10, 0)
