@@ -17,3 +17,17 @@ class TestCalculadora(unittest.TestCase):
         resultado = calcu.sumar(3, 5)
 
         self.assertEqual(resultado, 8)
+
+
+    def test_restar_8_y_2_regresa_6(self):
+        calcu = Calculadora()
+        resultado = calcu.restar(8, 2)
+
+        self.assertEqual(resultado, 6)
+
+
+    def test_restar_5_y_5_regresa_0(self):
+        calcu = Calculadora()
+        resultado = calcu.restar(5, 5)
+
+        self.assertEqual(resultado, 0)
